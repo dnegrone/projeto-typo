@@ -7281,10 +7281,9 @@ body.source-sans-pro {
 
 body.crimson-pro {
   font-family: "Crimson Pro", serif;
-  font-size: 1.275rem; }
+  font-size: 1.4rem; }
   body.crimson-pro h1, body.crimson-pro h2, body.crimson-pro h3, body.crimson-pro h4, body.crimson-pro h5, body.crimson-pro h6, body.crimson-pro strong {
-    font-family: sans-serif;
-    font-weight: 600; }
+    font-weight: 500; }
 
 
 /*# sourceMappingURL=/typo.80dfb952.css.map */
