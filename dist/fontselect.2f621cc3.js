@@ -118,47 +118,34 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"fontselect.js":[function(require,module,exports) {
-function fontValue() {
-  var fontSelect = document.getElementById("font-select");
-  console.log(fontSelect.length);
-  var font = fontSelect.value;
-  var $head = document.getElementsByTagName("head")[0];
-  var node = document.createElement("link");
-  node.rel = "stylesheet";
+var fontSelect = document.getElementById("font-select");
+var head = document.getElementsByTagName("head")[0];
+var body = document.getElementsByTagName("body")[0];
+var node = document.createElement("link");
+node.rel = "stylesheet";
 
-  var addFont = function addFont(font) {
-    node.href = "https://fonts.googleapis.com/css2?family=" + font + ":wght@400;500;700&display=swap";
-  };
+var addFont = function addFont(googleFont, fontClassName) {
+  removeFont();
 
-  var removeFont = function removeFont() {
-    for (var i = 0; i < fontSelect.length; i++) {
-      //console.log(fontSelect[i].value)
-      if (fontSelect[i].value !== "") {
-        document.getElementsByTagName("body")[0].classList.remove(fontSelect[i].value);
-      }
-    }
-  };
-
-  switch (font) {
-    case "Roboto":
-      removeFont();
-      addFont(font);
-      $head.appendChild(node);
-      document.getElementsByTagName("body")[0].classList.add("roboto");
-      break;
-
-    case "Inter":
-      removeFont();
-      node.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap";
-      $head.appendChild(node);
-      document.getElementsByTagName("body")[0].classList.add("roboto");
-      break;
-
-    default:
-      removeFont();
-      break;
+  if (fontClassName !== "default") {
+    node.href = "https://fonts.googleapis.com/css2?family=" + googleFont + ":wght@400;500;600;700&display=swap";
+    head.appendChild(node);
+    body.classList.add(fontClassName);
   }
-}
+};
+
+var removeFont = function removeFont() {
+  while (body.classList.length > 0) {
+    body.classList.remove(body.classList.item(0));
+  }
+};
+
+fontSelect.addEventListener("change", function (event) {
+  var font = event.target.value;
+  var googleFont = font.replace(/ /g, "+");
+  var fontClassName = font.toLowerCase().replace(/ /g, "-");
+  addFont(googleFont, fontClassName);
+});
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -187,7 +174,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50472" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49271" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

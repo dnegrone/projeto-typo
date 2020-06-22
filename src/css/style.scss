@@ -10,7 +10,7 @@ body.roboto {
 body.inter {
    font-family: Inter, sans-serif;
    h1, h2, h3, h4, h5, h6, strong {
-       font-weight: 500;
+       font-weight: 600;
    }
 }
 body.dm-sans {
@@ -22,12 +22,44 @@ body.dm-sans {
 body.noto-serif {
    font-family: "Noto Serif", serif;
    h1, h2, h3, h4, h5, h6, strong {
-       font-weight: 500;
+       font-weight: 700;
    }
 }
 body.noto-sans {
    font-family: "Noto Sans", serif;
    h1, h2, h3, h4, h5, h6, strong {
+       font-weight: 700;
+   }
+}
+body.montserrat {
+   font-family: "Montserrat", serif;
+   h1, h2, h3, h4, h5, h6, strong {
        font-weight: 500;
    }
+}
+body.merriweather {
+    font-family: "Merriweather", serif;
+    h1, h2, h3, h4, h5, h6, strong {
+        font-weight: 700;
+    }
+}
+body.muli {
+    font-family: "Muli", sans-serif;
+    h1, h2, h3, h4, h5, h6, strong {
+        font-weight: 600;
+    }
+}
+body.source-sans-pro {
+    font-family: "Source Sans Pro", sans-serif;
+    h1, h2, h3, h4, h5, h6, strong {
+        font-weight: 600;
+    }
+}
+body.crimson-pro {
+    font-family: "Crimson Pro", serif;
+    font-size: 1.275rem;
+    h1, h2, h3, h4, h5, h6, strong {
+        font-family: sans-serif;
+        font-weight: 600;
+    }
 }
