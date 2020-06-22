@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
-    "prebuild": "rm -rf dist",
-    "build": "parcel build ./src/index.html",
-    "surge": "npm run prebuild && npm run build"
+    "clean-dist": "rm -rf dist",
+    "parcel-build": "parcel build ./src/index.html",
+    "build": "npm run clean-dist && npm run parcel-build",
+    "surge": "npm run clean-dist && npm run parcel-build && cp CNAME ./dist && surge ./dist"
   },
   "keywords": [],
   "author": "",
